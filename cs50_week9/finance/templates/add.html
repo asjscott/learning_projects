@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <h2>Add Funds</h2>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="funds" name="funds" placeholder="Amount to Add" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="card" name="card" placeholder="Card Number" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="expiry" name="expiry" placeholder="Expiry Date" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Funds</button>
+    </form>
+{% endblock %}

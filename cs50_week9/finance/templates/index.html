@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Your Current Statement</h2>
+    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stocks Owned</th>
+                <th>Current Value</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{stock.symbol}}</td>
+                <td>{{stock.amount}}</td>
+                <td>{{stock.current}}</td>
+                <td>{{stock.value}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>Cash</td>
+                <td></td>
+                <td></td>
+                <td>{{cash}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td>{{total}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

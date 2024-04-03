@@ -1,0 +1,56 @@
+
+.welcome {
+    position: relative;
+    text-align: center;
+}
+
+
+.img-bkgrnd {
+    max-width: 1300px;
+    width: 100vw;
+    height: auto;
+}
+
+.homepage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 8rem;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+.container, .background {
+    position: relative;
+    height: 100vh;
+    width: auto;
+    text-align: center;
+}
+
+.sliders {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color-slider {
+    padding: 10vh
+}
+
+#open, #mid, #closed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.blinking {
+    padding-left: 50px;
+    font-size: 1rem;
+}
+
+.text-input {
+    padding-left: 50px;
+}

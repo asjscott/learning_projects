@@ -1,0 +1,36 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block body %}
+    <h1>Create A New Entry</h1>
+
+    <div class="container">
+        {% if message %}
+
+        <div class="alert alert-danger" style="text-align: center;", role="warning">
+            {{ message }}
+        </div>
+
+        {% endif %}
+        <form action="create" method="post">
+            {% csrf_token %}
+            <div class="form">
+                <label for="title">Title:</label>
+                <input id="title" name="title" type="text" placeholder="Title" class="form-control" {%if title%} value="{{title}}" {%endif%}/>
+            </div>
+            <div>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="10" placeholder="Content written in markdown" class="form-control">{% if content %}{{content}}{% endif %}</textarea>
+            </div>
+            <br>
+            <div>
+                <input type="submit" name="submit" class="btn btn-success" value="Save"/>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

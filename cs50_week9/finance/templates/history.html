@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Transaction History</h2>
+    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Amount of Stocks</th>
+                <th>Price per Stock</th>
+                <th>Transaction Total</th>
+                <th>Transaction Type</th>
+                <th>Date of Transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{stock.symbol}}</td>
+                <td>{{stock.amount}}</td>
+                <td>{{stock.price}}</td>
+                <td>{{stock.total}}</td>
+                <td>{{stock.type}}</td>
+                <td>{{stock.date_time}}</td>
+            </tr>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

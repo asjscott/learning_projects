@@ -1,0 +1,69 @@
+.logo
+{
+    font-size: xx-large;
+}
+
+.blue
+{
+    color: blue;
+}
+.red
+{
+    color: red;
+}
+.green
+{
+    color: green;
+}
+
+.links
+{
+    color: grey;
+    text-align: right;
+    margin: 5px 10px;
+}
+
+.links:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+.center-container
+{
+    position: relative;
+    height: 100vh;
+    text-align: center;
+}
+
+.search
+{
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inline
+{
+    margin: 10px 10px;
+}
+
+.input
+{
+    width:500px;
+    border-radius: 1rem;
+    text-indent: 10px;
+}
+
+.advanced
+{
+    width: 75vw
+}
+
+.tag
+{
+    text-align: right;
+    margin-top: 10px
+}

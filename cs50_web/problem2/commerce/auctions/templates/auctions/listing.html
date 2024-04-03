@@ -1,0 +1,105 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+
+    {% if Error %}
+
+        <h2>{{ Error }}</h2>
+
+
+    {% else %}
+    <div class="container">
+        <div>
+            <h2 class="my-2">Listing: {{item.title}}</h2>
+        </div>
+        {% if user.is_authenticated %}
+        {% if item.active %}
+        {% if item not in user.watchlist.all %}
+        <div>
+            <form action="{% url 'watch' item.id %}">
+                <input class="btn btn-secondary" type="submit" id="watchlist" value="add to watchlist"/>
+            </form>
+        </div>
+        {% else %}
+        <div>
+            <form action="{% url 'unwatch' item.id %}">
+                <input class="btn btn-secondary" type="submit" id="watchlist" value="remove from watchlist"/>
+            </form>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% if not item.active and user == bid.user %}
+            <div class="alert alert-info">
+                <h4>You won the auction. Pay now.</h4>
+            </div>
+        {% endif %}
+        <div>
+            <img class="mx-auto d-block" src="{{ item.image_url }}" alt="{{ item.title }}" style="width: 50%;"/>
+        </div>
+        <div class="my-2">
+            <span>{{ item.description }}</span>
+        </div>
+        <div>
+            <h4>$: {{ item.price }}</h4>
+        </div>
+        {% if item.active %}
+        <div>
+            <p> {{ item.bid_counter }} bid(s) so far. {% if item.bid_counter > 0 %} {{ bid.user }} is the current bidder {% endif %}</p>
+        </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+        {% if message %}
+        <div class="alert alert-danger" style="text-align: center;", role="warning">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% if item.active %}
+        <form class="form-group" action="{% url 'bid' item.id %}" method='post'>
+            {% csrf_token %}
+            <input type="number" class="form-control" placeholder="Bid" id="bid" name="bid" step="0.01"/>
+            <br>
+            <input class="btn btn-primary" type="submit" id="submit" value="Place Bid"/>
+        </form>
+        {% else %}
+        <div>
+            <h4>Auction Winner: {{ bid.user }}</h4>
+        </div>
+        {% endif %}
+        {% endif %}
+        <div>
+            <h4>Details</h4>
+            <ul>
+                <li>Listed by: {{ item.user }} </li>
+                <li>Category: {% if item.category %}{{item.category}}{% else %}This item has no category{% endif %}</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Comments</h4>
+            <ul>
+                {% for comment in comments %}
+                    <li>{{ comment.comment }}</li><p>{{ comment.user }} on {{ comment.created_at }}</p>
+                {% endfor %}
+            </ul>
+            {% if user.is_authenticated %}
+            <form class="form-group" action="{% url 'comment' item.id %}"  method='post'>
+                {% csrf_token %}
+                <label for="comment">Add Comment: </label>
+                <textarea name="comment" id="comment" placeholder="Item comment" class="form-control"></textarea>
+                <br>
+                <input type="submit" value="Comment" class="btn btn-primary"/>
+            </form>
+            {% endif %}
+        </div>
+        {% if user == item.user and item.active %}
+        <div>
+            <form action="{% url 'end' item.id %}">
+                <input class="btn btn-warning" type="submit" value="End Auction"/>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    {% endif %}
+
+{% endblock %}

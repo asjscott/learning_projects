@@ -1,0 +1,22 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    {% if message %}
+    {{ message }}
+    {% endif %}
+    <form class="form-group" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input type="submit" name="submit" value="Save" class="btn btn-primary"/>
+        <a href="{% url 'index' %}" class="btn btn-primary">Return to Home</a>
+    </form>
+
+
+</div>
+
+
+
+{% endblock %}
