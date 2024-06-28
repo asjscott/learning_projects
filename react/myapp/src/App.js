@@ -1,9 +1,9 @@
-import DrumMachine from "./DrumMachine";
+import Todo from './Todo'
 
 function App () {
   return (
     <>
-      <DrumMachine />
+      <Todo />
     </>
   )
 }
