@@ -1,0 +1,18 @@
+{
+  "assessments": [
+    {
+      "id": "1",
+      "name": "Assessment 1",
+      "questions": "15",
+      "length": "30",
+      "difficulty": "easy"
+    },
+    {
+      "name": "Alec",
+      "questions": "15",
+      "length": "15",
+      "difficulty": "easy",
+      "id": "f953"
+    }
+  ]
+}

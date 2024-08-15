@@ -1,10 +1,44 @@
-import Todo from './Todo'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./Pages/Root";
+import HomePage from './Pages/HomePage/HomePage'
+import CalculatorPage from "./Pages/CalculatorPage/Calculator";
+import PomodoroPage from "./Pages/PomodoroPage/Pomodoro";
+import DrumMachinePage from "./Pages/DrumMachinePage/DrumMachine";
+import RHFPage from "./Pages/FormPage/RHFPage";
 
-function App () {
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      },
+      {
+        path: "/calculator",
+        element: <CalculatorPage />
+      },
+      {
+        path: "/pomodoro",
+        element: <PomodoroPage />
+      },
+      {
+        path: "/drum_machine",
+        element: <DrumMachinePage />
+      },
+      {
+        path: "/form",
+        element: <RHFPage />,
+      }
+    ]
+  }
+])
+
+function App() {
+
   return (
-    <>
-      <Todo />
-    </>
+    <RouterProvider router={router} />
   )
 }
 

@@ -13,7 +13,7 @@ def solveNQueens(board, col):
     return False
 
 def isSafe(board, row, col):
-    for x in range(col):
+    for x in range(N):
         if board[row][x] == 1:
             return False
     for x, y in zip(range(row, -1, -1), range(col, -1, -1)):
@@ -24,7 +24,7 @@ def isSafe(board, row, col):
             return False
     return True
 
+
 board = [[0 for x in range(N)] for y in range(N)]
-board[0][5] = 1
 if not solveNQueens(board, 0):
     print("No solution found")

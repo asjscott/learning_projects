@@ -1,0 +1,16 @@
+.background {
+    height: 100vh;
+    background-color: rgb(208, 202, 202);
+}
+
+.title-line {
+    padding: 60px 60px 0 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    align-items: center;
+    font-size: 2rem;
+}

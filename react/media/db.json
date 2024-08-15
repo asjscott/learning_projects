@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "id": "a400",
+      "name": "Manuel Schroeder IV"
+    },
+    {
+      "id": "6a8c",
+      "name": "Mr. Michael Macejkovic"
+    },
+    {
+      "id": "09c3",
+      "name": "Miss Jonathon Strosin"
+    }
+  ],
+  "albums": [
+    {
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    },
+    {
+      "id": "10d2",
+      "userId": "a400",
+      "title": "Tasty Fresh Chips"
+    },
+    {
+      "id": "57d8",
+      "userId": "a400",
+      "title": "Handcrafted Frozen Gloves"
+    }
+  ],
+  "photos": [
+    {
+      "id": "f090",
+      "url": "https://loremflickr.com/150/150/abstract?lock=82659"
+    },
+    {
+      "id": "582c",
+      "url": "https://loremflickr.com/150/150/abstract?lock=37487"
+    },
+    {
+      "id": "33e2",
+      "url": "https://loremflickr.com/150/150/abstract?lock=17362"
+    }
+  ]
+}
